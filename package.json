@@ -1,0 +1,20 @@
+{
+  "name": "test_script_for_wm_product_marjetplace-prestashop",
+  "version": "1.0.0",
+  "description": "This repo will hold all the test script for automating test cases on on Prestashop which is our product marketplace",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx mocha  --no-timeouts --parallel --reporter mochawesome --require mochawesome/register --reporter-options reportDir=testReports, reportFilename=testReport"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "chromedriver": "^110.0.0",
+    "geckodriver": "^3.2.0",
+    "mocha": "^10.2.0",
+    "mochawesome": "^7.1.3",
+    "selenium-webdriver": "^4.8.1"
+  }
+}
