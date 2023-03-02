@@ -2,32 +2,31 @@ const { Builder, Browser, By, Key, until } = require('selenium-webdriver');
 const assert = require("assert");
 
 describe("Verifing if key features/menus on the home page are present", function () {
-    /*
-    it("Verify if the WM logo is present", async function () {
+
+    it("Verify if the WM logo is present on the landing page", async function () {
         let driver = await new Builder().forBrowser(Browser.CHROME).build();
         await driver.get('https://wealthmarketshop.com');
-        
+
         await driver.findElement(By.className("header-logo"));
-        
+
         driver.close();
-        
+
     })
-    
-    it("Verify if the menu to view the list of sellers is present", async function () {
-        
+
+    it("Verify if the menu to view the list of sellers is present on the landing page", async function () {
+
         let driver = await new Builder().forBrowser(Browser.CHROME).build();
         await driver.get('https://wealthmarketshop.com');
-        
+
         let listOfSellersMenu = await (await driver.findElement(By.id('kb_displaynav1_links_container'))).getText();
         assert.strictEqual(listOfSellersMenu, "Sellers", 'The Menu for Sellers');
-        
+
         driver.quit();
-        
+
     })
-   
-   
-    it("Verify if the menu to view user's wishlist is present", async function () {
-              
+
+    it("Verify if the menu to view user's wishlist is present on the landing page", async function () {
+
         let driver = await new Builder().forBrowser(Browser.CHROME).build();
 
         //A user have to sign in before he can seen the wishlist menu
@@ -46,15 +45,15 @@ describe("Verifing if key features/menus on the home page are present", function
         loginButton.click();
 
         //successful log in
-        await driver.wait(until.urlIs('https://wealthmarketshop.com/index.php?controller=my-account'), 5000 );
+        await driver.wait(until.urlIs('https://wealthmarketshop.com/index.php?controller=my-account'), 5000);
 
         //Check for the wishlist menu
         await driver.findElement(By.id('login_wish'));
-                
+
         // close browser session 
         driver.close();
     })
-     
+
     it(`Verify if the control menu 'dashboard' where a user can manage all his/her activities 
     as a seller on the ecommerce is present`, async function () {
 
@@ -79,13 +78,12 @@ describe("Verifing if key features/menus on the home page are present", function
         await driver.wait(until.urlIs('https://wealthmarketshop.com/index.php?controller=my-account'), 5000);
 
         //Check for the wishlist menu
-        let meme = await driver.findElement(By.className('link hidden-md-up')).getText();
-        console.log(meme)
+        await driver.findElement(By.className('link hidden-md-up')).getText();
 
         // close browser session 
         driver.close();
     })
-    
+
     it('Verify if all the menus to control a seller account are present', async function () {
 
         let driver = await new Builder().forBrowser(Browser.CHROME).build();
@@ -109,7 +107,6 @@ describe("Verifing if key features/menus on the home page are present", function
 
         //Check if all the menus are available
         let sellerMenus = await driver.findElement(By.className('link hidden-md-up')).getText();
-        console.log(sellerMenus)
 
         assert.equal(sellerMenus,
             ('Dashboard\n' +
@@ -135,7 +132,7 @@ describe("Verifing if key features/menus on the home page are present", function
         // close browser session 
         driver.close();
     })
-*/
+
     it('Verify if all the menus to control a customer account are present', async function () {
 
         let driver = await new Builder().forBrowser(Browser.CHROME).build();
@@ -177,7 +174,6 @@ describe("Verifing if key features/menus on the home page are present", function
         // close browser session 
         driver.close();
     })
-
 
 })
 
