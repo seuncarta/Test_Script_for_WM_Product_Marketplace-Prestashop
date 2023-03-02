@@ -4,6 +4,7 @@ const assert = require("assert");
 describe("Test for Login", function () {
 
     it("Valid scenario", async function () {
+
         // Set up the Selenium WebDriver instance
         let driver = await new Builder().forBrowser(Browser.CHROME).build();
 
@@ -23,17 +24,9 @@ describe("Test for Login", function () {
 
         await driver.wait(until.urlIs('https://wealthmarketshop.com/index.php?controller=my-account'), 5000, 'Showld load dashboard page');
 
-        //close the browser
-        await driver.quit();
+        // close browser session 
+        driver.close();
+
     })
 
-    // it("inValid scenario", async function () {
-
-    // })
-
-    // it("inValid scenario", async function () {
-
-    // })
-
 })
-
