@@ -55,9 +55,8 @@ describe("Verifing if key features/menus on the home page are present", function
         driver.close();
     })
      
-
     it(`Verify if the control menu 'dashboard' where a user can manage all his/her activities 
-    as a customer on the ecommerce is present`, async function () {
+    as a seller on the ecommerce is present`, async function () {
 
         let driver = await new Builder().forBrowser(Browser.CHROME).build();
 
@@ -86,13 +85,12 @@ describe("Verifing if key features/menus on the home page are present", function
         // close browser session 
         driver.close();
     })
-*/
-    it('Verify if all the menus to control a customer account are present', async function () {
+    
+    it('Verify if all the menus to control a seller account are present', async function () {
 
         let driver = await new Builder().forBrowser(Browser.CHROME).build();
 
-        //A user have to sign in before he can seen the wishlist menu
-
+        //To control your seller account you must have logged in, so we start be attempting to login
         await driver.get('https://wealthmarketshop.com/index.php?controller=authentication&back=my-account');
 
         // Fill in the login form
@@ -109,11 +107,11 @@ describe("Verifing if key features/menus on the home page are present", function
         //successful log in
         await driver.wait(until.urlIs('https://wealthmarketshop.com/index.php?controller=my-account'), 5000);
 
-        //Check for the wishlist menu
-        let customerMenus = await driver.findElement(By.className('link hidden-md-up')).getText();
-        console.log(customerMenus)
+        //Check if all the menus are available
+        let sellerMenus = await driver.findElement(By.className('link hidden-md-up')).getText();
+        console.log(sellerMenus)
 
-        assert.equal(customerMenus,
+        assert.equal(sellerMenus,
             ('Dashboard\n' +
                 'Seller Profile\n' +
                 'Products\n' +
@@ -137,7 +135,48 @@ describe("Verifing if key features/menus on the home page are present", function
         // close browser session 
         driver.close();
     })
+*/
+    it('Verify if all the menus to control a customer account are present', async function () {
 
+        let driver = await new Builder().forBrowser(Browser.CHROME).build();
+
+        //To control your seller account you must have logged in, so we start be attempting to login
+        await driver.get('https://wealthmarketshop.com/index.php?controller=authentication&back=my-account');
+
+        // Fill in the login form
+        const emailInput = driver.findElement(By.name('email'));
+        emailInput.sendKeys('seunjr7@gmail.com');
+
+        const passwordInput = driver.findElement(By.name('password'));
+        passwordInput.sendKeys('economicedu156');
+
+        // Submit the login form
+        const loginButton = driver.findElement(By.id('submit-login'));
+        loginButton.click();
+
+        //successful log in
+        await driver.wait(until.urlIs('https://wealthmarketshop.com/index.php?controller=my-account'), 5000);
+
+        //check if all teh menus are available
+        let customerMenus = await (await driver.findElement(By.className('account-list'))).getText();
+        assert.equal(customerMenus,
+            ('Personal info\n' +
+                'Merchandise returns\n' +
+                'Orders\n' +
+                'Credit slips\n' +
+                'Addresses\n' +
+                'Vouchers\n' +
+                'My alerts\n' +
+                'Seller Ticket Status\n' +
+                'Become a seller\n' +
+                'My wishlist\n' +
+                'Sign out'
+            )
+        )
+
+        // close browser session 
+        driver.close();
+    })
 
 
 })

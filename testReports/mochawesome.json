@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 0,
+    "passes": 1,
     "pending": 0,
-    "failures": 1,
-    "start": "2023-03-02T09:52:44.206Z",
-    "end": "2023-03-02T09:53:32.378Z",
-    "duration": 48172,
+    "failures": 0,
+    "start": "2023-03-02T11:01:46.526Z",
+    "end": "2023-03-02T11:01:54.352Z",
+    "duration": 7826,
     "testsRegistered": 1,
-    "passPercent": 0,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "6b0dcc5f-d1a6-48a6-9165-09d4dba95d6b",
+      "uuid": "a89aea06-b0e3-43d9-85c6-fadb02634771",
       "title": "",
       "fullFile": "C:\\Users\\USER\\Desktop\\Test_Script_for_WM_Product_Marjetplace-Prestashop\\UsersTest\\TestScript2.js",
       "file": "\\UsersTest\\TestScript2.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "1678eb63-6ead-43b8-9de9-d4b7297782e2",
+          "uuid": "f210683e-09f9-435f-9eff-eb9bffe9bb54",
           "title": "Verifing if key features/menus on the home page are present",
           "fullFile": "C:\\Users\\USER\\Desktop\\Test_Script_for_WM_Product_Marjetplace-Prestashop\\UsersTest\\TestScript2.js",
           "file": "\\UsersTest\\TestScript2.js",
@@ -38,33 +38,29 @@
               "title": "Verify if all the menus to control a customer account are present",
               "fullTitle": "Verifing if key features/menus on the home page are present Verify if all the menus to control a customer account are present",
               "timedOut": null,
-              "duration": 47237,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
+              "duration": 6955,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
               "pending": false,
               "context": null,
-              "code": "let driver = await new Builder().forBrowser(Browser.CHROME).build();\n        //A user have to sign in before he can seen the wishlist menu\n        await driver.get('https://wealthmarketshop.com/index.php?controller=authentication&back=my-account');\n        // Fill in the login form\n        const emailInput = driver.findElement(By.name('email'));\n        emailInput.sendKeys('seunjr7@gmail.com');\n        const passwordInput = driver.findElement(By.name('password'));\n        passwordInput.sendKeys('economicedu156');\n        // Submit the login form\n        const loginButton = driver.findElement(By.id('submit-login'));\n        loginButton.click();\n        //successful log in\n        await driver.wait(until.urlIs('https://wealthmarketshop.com/index.php?controller=my-account'), 5000);\n        //Check for the wishlist menu\n        let customerMenus = await driver.findElement(By.className('link hidden-md-up')).getText();\n        console.log(customerMenus)\n        assert.equal(customerMenus,\n            (   'Dashboard\\n' +\n                'Seller Profile\\n' +\n                'Products\\n' +\n                'Orders\\n' +\n                'Product Reviews\\n' +\n                'My Review\\n' +\n                'Earning\\n' +\n                'Transactions\\n' +\n                'Payout Request\\n' +\n                'Category Request\\n' +\n                'Shipping\\n' +\n                'GDPR\\n' +\n                'CSV/XML Import/Export\\n' +\n                'Ticket System\\n' +\n                'Booking Products\\n' +\n                'Booking Price Rues'\n            )\n        )\n        // close browser session \n        driver.close();",
-              "err": {
-                "message": "AssertionError: 'Dashboard\\n' +\n  'Seller Profile\\n' +\n  'Products\\n' +\n  'Orders\\n' +\n  'Product Reviews\\n' +\n  'My Reviews\\n' +\n  'Earning\\n' +\n  'Transactions\\n' +\n  'Payout Request\\n' +\n  'Category Request\\n' +\n  'Shipping\\n' +\n  'GDPR\\n' +\n  'CSV/XML Import/Export\\n' +\n  'Ticket System\\n' +\n  'Booking Products\\n' +\n  'Booking Price Rules' == 'Dashboard\\n' +\n  'Seller Profile\\n' +\n  'Products\\n' +\n  'Orders\\n' +\n  'Product Reviews\\n' +\n  'My Review\\n' +\n  'Earning\\n' +\n  'Transactions\\n' +\n  'Payout Request\\n' +\n  'Category Request\\n' +\n  'Shipping\\n' +\n  'GDPR\\n' +\n  'CSV/XML Import/Export\\n' +\n  'Ticket System\\n' +\n  'Booking Products\\n' +\n  'Booking Price Rues'",
-                "estack": "AssertionError [ERR_ASSERTION]: 'Dashboard\\n' +\n  'Seller Profile\\n' +\n  'Products\\n' +\n  'Orders\\n' +\n  'Product Reviews\\n' +\n  'My Reviews\\n' +\n  'Earning\\n' +\n  'Transactions\\n' +\n  'Payout Request\\n' +\n  'Category Request\\n' +\n  'Shipping\\n' +\n  'GDPR\\n' +\n  'CSV/XML Import/Export\\n' +\n  'Ticket System\\n' +\n  'Booking Products\\n' +\n  'Booking Price Rules' == 'Dashboard\\n' +\n  'Seller Profile\\n' +\n  'Products\\n' +\n  'Orders\\n' +\n  'Product Reviews\\n' +\n  'My Review\\n' +\n  'Earning\\n' +\n  'Transactions\\n' +\n  'Payout Request\\n' +\n  'Category Request\\n' +\n  'Shipping\\n' +\n  'GDPR\\n' +\n  'CSV/XML Import/Export\\n' +\n  'Ticket System\\n' +\n  'Booking Products\\n' +\n  'Booking Price Rues'\n    at Context.<anonymous> (UsersTest\\TestScript2.js:116:16)\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)",
-                "diff": " Seller Profile\n Products\n Orders\n Product Reviews\n- My Reviews\n+ My Review\n Earning\n Transactions\n Payout Request\n Category Request\n GDPR\n CSV/XML Import/Export\n Ticket System\n Booking Products\n- Booking Price Rules\n+ Booking Price Rues\n"
-              },
-              "uuid": "2f9320e0-17d0-4c7d-b992-eeec0565aaac",
+              "code": "let driver = await new Builder().forBrowser(Browser.CHROME).build();\n        //To control your seller account you must have logged in, so we start be attempting to login\n        await driver.get('https://wealthmarketshop.com/index.php?controller=authentication&back=my-account');\n        // Fill in the login form\n        const emailInput = driver.findElement(By.name('email'));\n        emailInput.sendKeys('seunjr7@gmail.com');\n        const passwordInput = driver.findElement(By.name('password'));\n        passwordInput.sendKeys('economicedu156');\n        // Submit the login form\n        const loginButton = driver.findElement(By.id('submit-login'));\n        loginButton.click();\n        //successful log in\n        await driver.wait(until.urlIs('https://wealthmarketshop.com/index.php?controller=my-account'), 5000);\n        // //Check for the wishlist menu\n        let customerMenus = await (await driver.findElement(By.className('account-list'))).getText();\n        assert.equal(customerMenus,\n            ('Personal info\\n' +\n                'Merchandise returns\\n' +\n                'Orders\\n' +\n                'Credit slips\\n' +\n                'Addresses\\n' +\n                'Vouchers\\n' +\n                'My alerts\\n' +\n                'Seller Ticket Status\\n' +\n                'Become a seller\\n' +\n                'My wishlist\\n' +\n                'Sign out'\n            )\n        )\n        // close browser session \n        // driver.close();",
+              "err": {},
+              "uuid": "1f429c6a-74e9-4a1e-8634-0f342cb29953",
               "parentUUID": null,
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
-          "failures": [
-            "2f9320e0-17d0-4c7d-b992-eeec0565aaac"
+          "passes": [
+            "1f429c6a-74e9-4a1e-8634-0f342cb29953"
           ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 47237,
+          "duration": 6955,
           "root": false,
           "rootEmpty": false,
           "_timeout": null
