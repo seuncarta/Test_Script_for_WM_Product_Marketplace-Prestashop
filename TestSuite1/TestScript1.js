@@ -6,7 +6,7 @@ describe("Test for Login", function () {
     it("Valid scenario", async function () {
 
         // Set up the Selenium WebDriver instance
-        let driver = await new Builder().forBrowser(Browser.CHROME).build();
+        let driver = await new Builder().forBrowser(Browser.FIREFOX).build();
 
         // Navigate to the log in page on the service marketplace
         await driver.get('https://wealthmarketshop.com/index.php?controller=authentication&back=my-account');

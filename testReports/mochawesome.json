@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2023-03-02T15:57:25.203Z",
-    "end": "2023-03-02T15:57:34.764Z",
-    "duration": 9561,
+    "start": "2023-03-07T13:18:26.291Z",
+    "end": "2023-03-07T13:18:36.811Z",
+    "duration": 10520,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "96424c2c-41cb-4e46-bf23-a760160c6a92",
+      "uuid": "d71566f4-e5f3-40b2-bd61-c137939bf7bf",
       "title": "",
       "fullFile": "C:\\Users\\USER\\Desktop\\Test_Script_for_WM_Product_Marjetplace-Prestashop\\TestSuite1\\TestScript1.js",
       "file": "\\TestSuite1\\TestScript1.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "49885f69-901c-4bba-90a3-f6af5dfc9260",
+          "uuid": "31106ebb-feca-40f6-b316-7ac296f5c11b",
           "title": "Test for Login",
           "fullFile": "C:\\Users\\USER\\Desktop\\Test_Script_for_WM_Product_Marjetplace-Prestashop\\TestSuite1\\TestScript1.js",
           "file": "\\TestSuite1\\TestScript1.js",
@@ -38,16 +38,16 @@
               "title": "Valid scenario",
               "fullTitle": "Test for Login Valid scenario",
               "timedOut": null,
-              "duration": 8873,
+              "duration": 9579,
               "state": "passed",
               "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "// Set up the Selenium WebDriver instance\n        let driver = await new Builder().forBrowser(Browser.CHROME).build();\n        // Navigate to the log in page on the service marketplace\n        await driver.get('https://wealthmarketshop.com/index.php?controller=authentication&back=my-account');\n        // Fill in the login form\n        const emailInput = driver.findElement(By.name('email'));\n        emailInput.sendKeys('seunjr7@gmail.com');\n        const passwordInput = driver.findElement(By.name('password'));\n        passwordInput.sendKeys('economicedu156');\n        // Submit the login form\n        const loginButton = driver.findElement(By.id('submit-login'));\n        loginButton.click();\n        await driver.wait(until.urlIs('https://wealthmarketshop.com/index.php?controller=my-account'), 5000, 'Showld load dashboard page');\n        // close browser session \n        driver.close();",
+              "code": "// Set up the Selenium WebDriver instance\n        let driver = await new Builder().forBrowser(Browser.FIREFOX).build();\n        // Navigate to the log in page on the service marketplace\n        await driver.get('https://wealthmarketshop.com/index.php?controller=authentication&back=my-account');\n        // Fill in the login form\n        const emailInput = driver.findElement(By.name('email'));\n        emailInput.sendKeys('seunjr7@gmail.com');\n        const passwordInput = driver.findElement(By.name('password'));\n        passwordInput.sendKeys('economicedu156');\n        // Submit the login form\n        const loginButton = driver.findElement(By.id('submit-login'));\n        loginButton.click();\n        await driver.wait(until.urlIs('https://wealthmarketshop.com/index.php?controller=my-account'), 5000, 'Showld load dashboard page');\n        // close browser session \n        driver.close();",
               "err": {},
-              "uuid": "bb5fef64-1dbe-4e21-862d-b4451b61c394",
+              "uuid": "8f4c2725-4054-4d3a-864c-58d03e1cc260",
               "parentUUID": null,
               "isHook": false,
               "skipped": false
@@ -55,12 +55,12 @@
           ],
           "suites": [],
           "passes": [
-            "bb5fef64-1dbe-4e21-862d-b4451b61c394"
+            "8f4c2725-4054-4d3a-864c-58d03e1cc260"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 8873,
+          "duration": 9579,
           "root": false,
           "rootEmpty": false,
           "_timeout": null
