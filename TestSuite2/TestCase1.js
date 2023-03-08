@@ -101,12 +101,4 @@ describe("Verifying the process of search for a particaulr product and adding it
         driver.quit();
     });
 
-    // it("", async function () {
-
-    // });
-
-    // it("", async function () {
-
-    // })
-
 })
