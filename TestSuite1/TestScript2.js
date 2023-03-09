@@ -4,7 +4,7 @@ const assert = require("assert");
 describe("Verifing if key features/menus on the home page are present", function () {
 
     it("Verify if the WM logo is present on the landing page", async function () {
-        let driver = await new Builder().forBrowser(Browser.CHROME).build();
+        let driver = await new Builder().forBrowser("firefox").build();
         await driver.get('https://wealthmarketshop.com');
 
         await driver.findElement(By.className("header-logo"));
