@@ -27,6 +27,6 @@ describe("Test for Login", function () {
         // close browser session 
         driver.close();
 
-    })
+    });
 
-})
+});
