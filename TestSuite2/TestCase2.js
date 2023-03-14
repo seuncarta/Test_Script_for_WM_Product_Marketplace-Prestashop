@@ -68,7 +68,8 @@ describe("Test for Login", function () {
         await driver.findElement(By.xpath("//div/div/div[2]/div[2]/div/article[1]/div/div[2]/div[1]")).click();
 
         await driver.findElement(By.xpath("//div[1]/div[2]/section/div[1]/div/div[5]/div[3]/a/div[2]/span")).click();   
-
+        
+        //This line of code was for debugging
         driver.getTitle().then(async function (title) {
             console.log(title);            
         });
