@@ -11,15 +11,17 @@ describe("Test for Login", function () {
         // Navigate to the log in page on the service marketplace
         await driver.get('https://wealthmarketshop.com/index.php?controller=authentication&back=my-account');
 
+        await driver.findElement(By.id("submit-login")).click();
+
         // Fill in the login form
-        const emailInput = driver.findElement(By.name('email'));
+        const emailInput = driver.findElement(By.name('username'));
         emailInput.sendKeys('seunjr7@gmail.com');
 
         const passwordInput = driver.findElement(By.name('password'));
         passwordInput.sendKeys('economicedu156');
 
         // Submit the login form
-        const loginButton = driver.findElement(By.id('submit-login'));
+        const loginButton = driver.findElement(By.className('submit'));
         loginButton.click();
 
         await driver.wait(until.urlIs('https://wealthmarketshop.com/index.php?controller=my-account'), 5000, 'Showld load dashboard page');
